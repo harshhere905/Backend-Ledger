@@ -201,7 +201,6 @@ const createTransaction = async (req, res) => {
             }],
             { session }
         );
-        await new Promise(resolve => setTimeout(resolve, 20000));
 
         await Ledger.create(
             [{
