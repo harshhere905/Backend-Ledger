@@ -292,7 +292,7 @@ Authorization: Bearer <token>
 ![Create Account](./images/Screenshot%202026-06-03%20213420.png)
 
 **Get Balance — `200 OK`**
-![Get Balance](./images/Screenshot%202026-06-03%20213908.png)
+![Get Balance](./images/Screenshot%202026-06-03%20214446.png)
 
 ---
 
@@ -342,7 +342,7 @@ Content-Type: application/json
 ```
 
 **Initial Funds — `201 Created`**
-![Initial Funds](./images/Screenshot%202026-06-03%20214446.png)
+![Initial Funds](./images/Screenshot%202026-06-03%20213908.png)
 
 **Transfer Funds — `201 Created`**
 ![Transfer](./images/Screenshot%202026-06-03%20215215.png)
