@@ -6,7 +6,9 @@ A production-grade banking transaction system backend built with **Node.js**, **
 
 **🌐 Live API:** `https://backend-ledger-f0dy.onrender.com`
 
-![Project Overview](./images/Screenshot%202026-06-03%20212127.png)
+<p align="center">
+  <img src="./images/Screenshot%202026-06-03%20212127.png" width="600" alt="Project Overview"/>
+</p>
 
 ---
 
@@ -19,15 +21,16 @@ A production-grade banking transaction system backend built with **Node.js**, **
 - [Getting Started](#getting-started)
 - [Environment Variables](#environment-variables)
 - [API Reference](#api-reference)
-  - [Auth Routes](#-auth-routes)
-  - [Account Routes](#-account-routes)
-  - [Transaction Routes](#-transaction-routes)
+  - [Auth Routes](#auth-routes)
+  - [Account Routes](#account-routes)
+  - [Transaction Routes](#transaction-routes)
 - [How the Ledger System Works](#how-the-ledger-system-works)
 - [Idempotency Keys](#idempotency-keys)
 - [License](#license)
 
 ---
 
+<a id="architecture-overview"></a>
 ## 🏗 Architecture Overview
 
 ```
@@ -61,6 +64,7 @@ The project follows a **modular MVC-style architecture** with clear separation b
 
 ---
 
+<a id="features"></a>
 ## ✨ Features
 
 - 🔐 **JWT Authentication** with bcrypt password hashing
@@ -75,6 +79,7 @@ The project follows a **modular MVC-style architecture** with clear separation b
 
 ---
 
+<a id="tech-stack"></a>
 ## 🛠 Tech Stack
 
 | Layer | Technology |
@@ -88,6 +93,7 @@ The project follows a **modular MVC-style architecture** with clear separation b
 
 ---
 
+<a id="project-structure"></a>
 ## 📁 Project Structure
 
 ```
@@ -117,6 +123,7 @@ ledger-api/
 
 ---
 
+<a id="getting-started"></a>
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -145,6 +152,7 @@ npm run dev
 
 ---
 
+<a id="environment-variables"></a>
 ## 🔑 Environment Variables
 
 Create a `.env` file in the root directory:
@@ -172,12 +180,14 @@ GMAIL_USER=your_email@gmail.com
 
 ---
 
+<a id="api-reference"></a>
 ## 📡 API Reference
 
 > **Protected routes** require the `Authorization: Bearer <token>` header.
 
 ---
 
+<a id="auth-routes"></a>
 ### 🔐 Auth Routes
 
 **Base:** `/api/v1/auth`
@@ -239,6 +249,7 @@ Content-Type: application/json
 
 ---
 
+<a id="account-routes"></a>
 ### 🏦 Account Routes
 
 **Base:** `/api/v1/account`
@@ -285,6 +296,7 @@ Authorization: Bearer <token>
 
 ---
 
+<a id="transaction-routes"></a>
 ### 💸 Transaction Routes
 
 **Base:** `/api/v1/transaction`
@@ -340,6 +352,7 @@ Content-Type: application/json
 
 ---
 
+<a id="how-the-ledger-system-works"></a>
 ## 📒 How the Ledger System Works
 
 Instead of storing a `balance` field directly on an account, every financial event is stored as a **Ledger Entry**:
@@ -368,6 +381,7 @@ Balance Query
 
 ---
 
+<a id="idempotency-keys"></a>
 ## 🔁 Idempotency Keys
 
 To prevent duplicate transactions (e.g., if a client retries a failed request), every transfer request accepts an `idempotencyKey`.
@@ -398,6 +412,7 @@ Key deployment practices followed:
 
 ---
 
+<a id="license"></a>
 ## 📄 License
 
 MIT © [Priyanshu Varshney](https://github.com/harshhere905)
