@@ -1,0 +1,111 @@
+<svg width="100%" viewBox="0 0 680 580" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Ledger Banking API – System Architecture</title>
+<desc>Structural diagram showing the full request flow from Client through Express Router, Auth Middleware, Controller, Service Layer, MongoDB collections, and Nodemailer.</desc>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    .th  { font-size: 13px; font-weight: 600; fill: #1a1a2e; }
+    .ts  { font-size: 11px; fill: #555; }
+    .arr { stroke: #aaa; stroke-width: 1.5; fill: none; }
+    .node-gray   rect { fill: #f3f3f3; stroke: #ccc; }
+    .node-purple rect { fill: #ede9fe; stroke: #a78bfa; }
+    .node-teal   rect { fill: #d1fae5; stroke: #34d399; }
+    .node-coral  rect { fill: #fee2e2; stroke: #f87171; }
+    .node-amber  rect { fill: #fef3c7; stroke: #f59e0b; }
+    .container-teal { fill: #d1fae5; stroke: #34d399; }
+    .legend-purple { fill: #ede9fe; stroke: #a78bfa; }
+    .legend-teal   { fill: #d1fae5; stroke: #34d399; }
+    .legend-coral  { fill: #fee2e2; stroke: #f87171; }
+    .legend-amber  { fill: #fef3c7; stroke: #f59e0b; }
+    .side-label { font-size: 10px; fill: #aaa; }
+  </style>
+</defs>
+
+<!-- CLIENT -->
+<g class="node-gray"><rect x="265" y="20" width="150" height="44" rx="8" stroke-width="0.5"/></g>
+<text class="th" x="340" y="46" text-anchor="middle">Client</text>
+
+<line x1="340" y1="64" x2="340" y2="88" class="arr" marker-end="url(#arrow)"/>
+
+<!-- EXPRESS ROUTER -->
+<g class="node-purple"><rect x="215" y="90" width="250" height="44" rx="8" stroke-width="0.5"/></g>
+<text class="th" x="340" y="107" text-anchor="middle">Express router</text>
+<text class="ts" x="340" y="123" text-anchor="middle">auth / account / transaction</text>
+
+<line x1="340" y1="134" x2="340" y2="158" class="arr" marker-end="url(#arrow)"/>
+
+<!-- AUTH MIDDLEWARE -->
+<g class="node-coral"><rect x="220" y="160" width="240" height="44" rx="8" stroke-width="0.5"/></g>
+<text class="th" x="340" y="177" text-anchor="middle">Auth middleware</text>
+<text class="ts" x="340" y="193" text-anchor="middle">JWT verify — protected routes only</text>
+
+<line x1="340" y1="204" x2="340" y2="228" class="arr" marker-end="url(#arrow)"/>
+
+<!-- CONTROLLER -->
+<g class="node-purple"><rect x="220" y="230" width="240" height="44" rx="8" stroke-width="0.5"/></g>
+<text class="th" x="340" y="247" text-anchor="middle">Controller</text>
+<text class="ts" x="340" y="263" text-anchor="middle">auth / account / transaction</text>
+
+<line x1="340" y1="274" x2="340" y2="298" class="arr" marker-end="url(#arrow)"/>
+
+<!-- SERVICE LAYER -->
+<g class="node-purple"><rect x="220" y="300" width="240" height="44" rx="8" stroke-width="0.5"/></g>
+<text class="th" x="340" y="317" text-anchor="middle">Service layer</text>
+<text class="ts" x="340" y="333" text-anchor="middle">business logic + aggregation pipeline</text>
+
+<line x1="340" y1="344" x2="340" y2="370" class="arr" marker-end="url(#arrow)"/>
+
+<!-- MONGODB CONTAINER -->
+<rect x="60" y="372" width="420" height="138" rx="12" class="container-teal" stroke-width="0.5"/>
+<text class="th" x="270" y="394" text-anchor="middle">MongoDB Atlas</text>
+
+<!-- 4 collections -->
+<g class="node-teal"><rect x="78" y="406" width="88" height="88" rx="8" stroke-width="0.5"/></g>
+<text class="th" x="122" y="434" text-anchor="middle">Users</text>
+<text class="ts" x="122" y="452" text-anchor="middle">auth data</text>
+<text class="ts" x="122" y="468" text-anchor="middle">credentials</text>
+
+<g class="node-teal"><rect x="180" y="406" width="88" height="88" rx="8" stroke-width="0.5"/></g>
+<text class="th" x="224" y="434" text-anchor="middle">Accounts</text>
+<text class="ts" x="224" y="452" text-anchor="middle">account</text>
+<text class="ts" x="224" y="468" text-anchor="middle">records</text>
+
+<g class="node-teal"><rect x="282" y="406" width="100" height="88" rx="8" stroke-width="0.5"/></g>
+<text class="th" x="332" y="428" text-anchor="middle">Transactions</text>
+<text class="ts" x="332" y="446" text-anchor="middle">transfer records</text>
+<text class="ts" x="332" y="462" text-anchor="middle">idempotency</text>
+<text class="ts" x="332" y="478" text-anchor="middle">keys</text>
+
+<g class="node-teal"><rect x="396" y="406" width="72" height="88" rx="8" stroke-width="0.5"/></g>
+<text class="th" x="432" y="434" text-anchor="middle">Ledger</text>
+<text class="ts" x="432" y="452" text-anchor="middle">credit /</text>
+<text class="ts" x="432" y="468" text-anchor="middle">debit</text>
+
+<!-- SERVICE → NODEMAILER -->
+<line x1="460" y1="322" x2="528" y2="322" class="arr" marker-end="url(#arrow)"/>
+
+<!-- NODEMAILER -->
+<g class="node-amber"><rect x="530" y="300" width="118" height="44" rx="8" stroke-width="0.5"/></g>
+<text class="th" x="589" y="317" text-anchor="middle">Nodemailer</text>
+<text class="ts" x="589" y="333" text-anchor="middle">Gmail OAuth2</text>
+
+<line x1="589" y1="344" x2="589" y2="396" class="arr" marker-end="url(#arrow)"/>
+
+<!-- EMAIL ALERT -->
+<g class="node-amber"><rect x="530" y="398" width="118" height="44" rx="8" stroke-width="0.5"/></g>
+<text class="th" x="589" y="415" text-anchor="middle">Email alert</text>
+<text class="ts" x="589" y="431" text-anchor="middle">on account events</text>
+
+<!-- LEGEND -->
+<rect x="60" y="534" width="12" height="12" rx="2" class="legend-purple" stroke-width="0.5"/>
+<text class="ts" x="78" y="544">MVC layer</text>
+<rect x="155" y="534" width="12" height="12" rx="2" class="legend-teal" stroke-width="0.5"/>
+<text class="ts" x="173" y="544">Data store</text>
+<rect x="250" y="534" width="12" height="12" rx="2" class="legend-coral" stroke-width="0.5"/>
+<text class="ts" x="268" y="544">Security</text>
+<rect x="335" y="534" width="12" height="12" rx="2" class="legend-amber" stroke-width="0.5"/>
+<text class="ts" x="353" y="544">Email service</text>
+</svg>
