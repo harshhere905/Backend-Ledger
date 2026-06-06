@@ -66,8 +66,6 @@ The project follows a **modular MVC-style architecture** with clear separation b
 <a id="system-architecture-diagram"></a>
 ## 🗺 System Architecture Diagram
 
-> Upload `ledger-architecture.svg` (provided separately) to your repo root alongside `README.md` — it will render automatically on GitHub.
-
 ![System Architecture Diagram](images/ledger-architecture.svg)
 
 ---
