@@ -6,8 +6,10 @@ A production-grade banking transaction system backend built with **Node.js**, **
 
 **🌐 Live API:** `https://backend-ledger-f0dy.onrender.com`
 
+
 <p align="center">
- <img width="1376" height="1168" alt="diagram (3)" src="https://github.com/user-attachments/assets/b797b86d-c8b7-4a67-8b0e-9120e582a11e" />
+  <img src="./images/Screenshot%202026-06-03%20212127.png" width="600" alt="Project Overview"/>
+ <img width="600" height="500" alt="diagram (3)" src="https://github.com/user-attachments/assets/b797b86d-c8b7-4a67-8b0e-9120e582a11e" />
 </p>
 
 
