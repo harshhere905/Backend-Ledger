@@ -63,6 +63,14 @@ Auth Middleware (JWT Verify)
 The project follows a **modular MVC-style architecture** with clear separation between routes, controllers, services, and models.
 
 ---
+<a id="system-architecture-diagram"></a>
+## 🗺 System Architecture Diagram
+
+> Upload `ledger-architecture.svg` (provided separately) to your repo root alongside `README.md` — it will render automatically on GitHub.
+
+![System Architecture Diagram](ledger-architecture.svg)
+
+---
 
 <a id="features"></a>
 ## ✨ Features
